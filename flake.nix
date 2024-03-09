@@ -26,6 +26,9 @@
           flake.config.nixosModules.vscodeServerWsl
           ({ lib, pkgs, config, ... }: {
             wsl = {
+              enable = true;
+              defaultUser = "eduardo";
+              nativeSystemd = true;
               startMenuLaunchers = true;
               useWindowsDriver = true;
             };
