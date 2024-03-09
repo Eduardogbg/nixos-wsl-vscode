@@ -12,14 +12,14 @@
         export PATH=$PATH:${lib.strings.makeBinPath [ pkgs.wget ]}
         export EDITOR="code --wait"
       '';
-      home-manager.users =
-        lib.trivial.pipe nixosModule.config.users.users [
-          (lib.attrsets.filterAttrs (_: userConfig: userConfig.isNormalUser))
-          (lib.attrsets.mapAttrs (userName: userConfig: {
-            home.stateVersion = "23.11";
-            home.file.".vscode-server/server-env-setup".text = nixosModule.config.vscodeServer.serverEnvSetup;
-          }))
-        ];
+      # home-manager.users =
+      #   lib.trivial.pipe nixosModule.config.users.users [
+      #     (lib.attrsets.filterAttrs (_: userConfig: userConfig.isNormalUser))
+      #     (lib.attrsets.mapAttrs (userName: userConfig: {
+      #       home.stateVersion = "23.11";
+      #       home.file.".vscode-server/server-env-setup".text = nixosModule.config.vscodeServer.serverEnvSetup;
+      #     }))
+      #   ];
       programs.nix-ld.libraries = [
         pkgs.zlib
       ];
