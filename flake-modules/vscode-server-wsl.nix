@@ -4,7 +4,6 @@ topLevel@{ inputs, lib, ... }: {
   ];
   flake.nixosModules.vscodeServerWsl = nixosModule: {
     imports = [
-      inputs.nixos-wsl.nixosModules.wsl
       topLevel.config.flake.nixosModules.vscodeServer
     ];
     config.vscodeServer.serverEnvSetup = ''
