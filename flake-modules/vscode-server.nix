@@ -20,9 +20,9 @@
       #       home.file.".vscode-server/server-env-setup".text = nixosModule.config.vscodeServer.serverEnvSetup;
       #     }))
       #   ];
-      programs.nix-ld.libraries = [
-        pkgs.zlib
-      ];
+      # programs.nix-ld.libraries = [
+      #   pkgs.zlib
+      # ];
     };
   };
 
