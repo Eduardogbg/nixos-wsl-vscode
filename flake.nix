@@ -6,10 +6,10 @@
       inputs.nixpkgs.follows = "nixpkgs";
       url = "github:nix-community/NixOS-WSL";
     };
-    home-manager = {
-      inputs.nixpkgs.follows = "nixpkgs";
-      url = "github:nix-community/home-manager";
-    };
+    # home-manager = {
+    #   inputs.nixpkgs.follows = "nixpkgs";
+    #   url = "github:nix-community/home-manager";
+    # };
   };
   outputs = inputs: inputs.flake-parts.lib.mkFlake { inherit inputs; } ({ lib, ... }: {
     imports = lib.trivial.pipe ./flake-modules [
