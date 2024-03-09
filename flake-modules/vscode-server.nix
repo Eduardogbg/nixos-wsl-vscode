@@ -1,7 +1,6 @@
 { inputs, lib, ... }: {
   flake.nixosModules.vscodeServer = nixosModule@{ pkgs, ... }: {
     imports = [
-      inputs.nix-ml-ops.nixosModules.nixLd
       inputs.home-manager.nixosModules.home-manager
     ];
     options.vscodeServer.serverEnvSetup = lib.mkOption {
